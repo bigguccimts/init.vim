@@ -36,8 +36,11 @@ let g:neoformat_c_clangformat = {
             \ 'args': ['-style=Microsoft'],
             \ }
 let g:neoformat_only_msg_on_error = 1
-au BufWrite * :Neoformat clangformat
-
+" au BufWrite * :Neoformat clangformat
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | :Neoformat clangformat
+augroup END
 " Keymaps
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <S-M-f> :Neoformat clangformat<CR>
