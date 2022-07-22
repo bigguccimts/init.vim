@@ -59,12 +59,13 @@ let g:neoformat_c_clangformat = {
             \ 'exe': 'clang-format',
             \ 'args': ['-style=Microsoft'],
             \ }
+let g:shfmt_opt="-ci"
 let g:neoformat_only_msg_on_error = 1
 
 " Formatting on save
 augroup fmt
   autocmd!
-  autocmd BufWrite * undojoin | :Neoformat clangformat
+  autocmd BufWrite * undojoin | :Neoformat
 augroup END
 
 " Coc config
