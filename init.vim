@@ -36,7 +36,6 @@ let g:neoformat_c_clangformat = {
             \ 'args': ['-style=Microsoft'],
             \ }
 let g:neoformat_only_msg_on_error = 1
-" au BufWrite * :Neoformat clangformat
 augroup fmt
   autocmd!
   autocmd BufWritePre * undojoin | :Neoformat clangformat
