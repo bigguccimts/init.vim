@@ -20,7 +20,7 @@
 
 " Keymaps
 nnoremap <C-t> :NERDTreeToggle<CR>
-nnoremap <S-M-f> :Neoformat clangformat<CR>
+nnoremap <S-M-f> :Neoformat<CR>
 nnoremap <C-n> :TerminalSplit bash<CR>
 
 " Plugin Installs
