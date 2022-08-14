@@ -17,6 +17,7 @@
 :set softtabstop=4
 :set mouse=a
 :set encoding=utf-8
+:set background=dark
 
 " Keymaps
 nnoremap <C-t> :NERDTreeToggle<CR>
@@ -35,11 +36,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'sbdchd/neoformat'
+Plug 'safv12/andromeda.vim'
 
 call plug#end()
 
 " Colorscheme
-:colorscheme jellybeans
+":colorscheme jellybeans
+:colorscheme andromeda
 
 " Nerdtree config
 " Script for automatic closing of nerdtree buffer when nvim is exited
@@ -82,9 +85,12 @@ endfunction
 
 " Indent config
 set termguicolors
-
-highlight IndentBlanklineIndent1 guibg=#151515 blend=nocombine
-highlight IndentBlanklineIndent2 guibg=#222222 blend=nocombine
+" For jellybeans
+"highlight IndentBlanklineIndent1 guibg=#151515 blend=nocombine
+"highlight IndentBlanklineIndent2 guibg=#222222 blend=nocombine
+" For andromeda
+highlight IndentBlanklineIndent1 guibg=#23262e blend=nocombine
+highlight IndentBlanklineIndent2 guibg=#2a2c33 blend=nocombine
 
 let g:indent_blankline_char = ""
 let g:indent_blankline_char_highlight_list = ["IndentBlanklineIndent1", "IndentBlanklineIndent2"]
