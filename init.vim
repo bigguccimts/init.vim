@@ -90,7 +90,7 @@ set termguicolors
 "highlight IndentBlanklineIndent2 guibg=#222222 blend=nocombine
 " For andromeda
 highlight IndentBlanklineIndent1 guibg=#23262e blend=nocombine
-highlight IndentBlanklineIndent2 guibg=#2a2c33 blend=nocombine
+highlight IndentBlanklineIndent2 guibg=#383b42 blend=nocombine
 
 let g:indent_blankline_char = ""
 let g:indent_blankline_char_highlight_list = ["IndentBlanklineIndent1", "IndentBlanklineIndent2"]
