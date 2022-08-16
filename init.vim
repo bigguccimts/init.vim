@@ -27,23 +27,26 @@ nnoremap <C-n> :TerminalSplit bash<CR>
 " Plugin Installs
 call plug#begin()
 Plug 'vim-airline/vim-airline'
-Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'ap/vim-css-color'
 Plug 'rafi/awesome-vim-colorschemes'
 Plug 'tc50cal/vim-terminal'
-Plug 'ryanoasis/vim-devicons'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'jiangmiao/auto-pairs'
 Plug 'lukas-reineke/indent-blankline.nvim'
 Plug 'sbdchd/neoformat'
 Plug 'safv12/andromeda.vim'
-
+Plug 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plug 'preservim/nerdtree' |
+            \ Plug 'Xuyuanp/nerdtree-git-plugin' |
+            \ Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 " Colorscheme
 ":colorscheme jellybeans
+"let g:airline_theme = 'jellybeans'
 :colorscheme andromeda
-
+let g:airline_theme = 'bubblegum'
 " Nerdtree config
 " Script for automatic closing of nerdtree buffer when nvim is exited
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
@@ -96,3 +99,27 @@ let g:indent_blankline_char = ""
 let g:indent_blankline_char_highlight_list = ["IndentBlanklineIndent1", "IndentBlanklineIndent2"]
 let g:indent_blankline_space_char_highlight_list = ["IndentBlanklineIndent1", "IndentBlanklineIndent2"]
 let g:indent_blankline_show_trailing_blankline_indent = v:false
+
+" NERDTree syntax highlight config
+let s:red = "AE403F"
+let g:WebDevIconsDisableDefaultFolderSymbolColorFromNERDTreeDir = 1
+let g:WebDevIconsDisableDefaultFileSymbolColorFromNERDTreeFile = 1
+let g:DevIconsEnableFoldersOpenClose = 1
+let g:WebDevIconsDefaultOpenFolderSymbolColor= s:red
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+
+let g:NERDTreeGitStatusUseNerdFonts = 1 " you should install nerdfonts by yourself. default: 0
+let g:NERDTreeGitStatusIndicatorMapCustom = {
+                \ 'Modified'  :'✹',
+                \ 'Staged'    :'✚',
+                \ 'Untracked' :'✭',
+                \ 'Renamed'   :'➜',
+                \ 'Unmerged'  :'═',
+                \ 'Deleted'   :'✖',
+                \ 'Dirty'     :'✗',
+                \ 'Ignored'   :'☒',
+                \ 'Clean'     :'✔︎',
+                \ 'Unknown'   :'?',
+                \ }
