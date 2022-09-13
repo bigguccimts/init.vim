@@ -65,6 +65,10 @@ let g:neoformat_c_clangformat = {
             \ 'exe': 'clang-format',
             \ 'args': ['-style=Microsoft'],
             \ }
+let g:neoformat_cpp_clangformat = {
+            \ 'exe': 'clang-format',
+            \ 'args': ['-style=Microsoft'],
+            \ }
 let g:shfmt_opt="-ci"
 let g:neoformat_only_msg_on_error = 1
 
